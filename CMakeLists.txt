@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.9.4)
+project(cpp)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 11)
+include_directories(".")
+add_executable(test-dmp dmp.cc)
