@@ -17,5 +17,5 @@ add_custom_target(
 
 add_custom_target(
         fuzz
-        COMMAND clang++ ${CMAKE_SOURCE_DIR}/fuzz-diff.cc -fsanitize=undefined,address,fuzzer -g -O2 -o fuzz-diff 
+        COMMAND clang++ ${CMAKE_SOURCE_DIR}/fuzz-diff.cc -fsanitize=undefined,address,fuzzer -fno-sanitize-recover=undefined -g -O2 -o fuzz-diff 
 )
