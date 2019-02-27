@@ -4,3 +4,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
 include_directories(".")
 add_executable(test-dmp dmp.cc)
+
+add_custom_target(
+        format
+        COMMAND clang-format
+        -style='{BasedOnStyle: Google, IndentWidth: 4}'
+        -i
+        ${CMAKE_SOURCE_DIR}/*.cc
+        ${CMAKE_SOURCE_DIR}/*.hpp
+)
+

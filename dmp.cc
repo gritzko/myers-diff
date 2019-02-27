@@ -1,19 +1,18 @@
 #include "dmp.hpp"
-#include<string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-using dmp_str = DMP<string>;
+using MyersStringDiff = MyersDiff<string>;
 
-int main (int argn, char** args) {
+int main(int argn, char** args) {
+    string one{"test"};
+    string two{"text"};
+    MyersStringDiff diff{one, two};
 
-    dmp_str dmp;
-
-    auto diff = dmp.diff_main("test", "text");
-
-    for(auto i=diff.begin(); i!=diff.end(); ++i) {
-        cout << i->str() << endl;
+    for (const auto &i : diff) {
+        cout << i.str() << endl;
     }
 
     return 0;

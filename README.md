@@ -12,7 +12,7 @@ Improvements made:
 * a MyersDiff<String> template parametrized with an arbitrary string class 
   (or an arbitrary vector with an STL-like interface);
 * zero-allocation (the original Java/JavaScript code does a lot of annoying
-  (sub)string (re)allocations);
+  string splicing - JVM may optimize that, std::string does not);
 * fuzz tested.
 
 Again, the algorithm accepts arbitrary container classes, so there is no need
