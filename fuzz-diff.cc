@@ -1,6 +1,6 @@
 #include <string.h>
 #include <string>
-#include "dmp.hpp"
+#include "dmp_diff.hpp"
 
 using namespace std;
 
