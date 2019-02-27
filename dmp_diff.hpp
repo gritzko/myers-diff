@@ -23,6 +23,7 @@
 #include <assert.h>
 #include <limits.h>
 #include <stdint.h>
+#include <string>
 #include <algorithm>
 #include <chrono>
 #include <unordered_map>
@@ -128,7 +129,7 @@ class MyersDiff {
         Range text;
         Diff(Operation op, Range text_range)
             : operation{op}, text{text_range} {}
-        string str() const {
+        std::string str() const {
             string ret;
             ret.push_back(op2chr(operation));
             ret.push_back('\t');
