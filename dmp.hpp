@@ -30,7 +30,7 @@
 
 using namespace std;
 
-enum Operation { DELETE, INSERT, EQUAL };
+enum Operation : int8_t { EQUAL=0, INSERT=1, DELETE=2 };
 
 char op2chr(Operation op) {
     switch (op) {
@@ -1197,6 +1197,24 @@ class MyersDiff {
         }
         return text;
     }
+
+    struct Stats {
+        Size equal, inserted, deleted;
+        Stats() : equal{0}, inserted{0}, deleted{0} {}
+    };
+
+    Stats stats() const {
+        Stats ret;
+        for (const auto &i : result) {
+            switch (i.operation) {
+                case EQUAL:  ret.equal += i.text.size(); break;
+                case INSERT: ret.inserted += i.text.size(); break;
+                case DELETE: ret.deleted += i.text.size(); break;
+            }
+        }
+        return ret;
+    }
+
 };
 
 #endif
