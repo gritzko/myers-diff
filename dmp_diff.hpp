@@ -33,7 +33,7 @@ using namespace std;
 
 enum Operation : int8_t { EQUAL=0, INSERT=1, DELETE=2 };
 
-char op2chr(Operation op) {
+inline char op2chr(Operation op) {
     switch (op) {
         case DELETE:
             return '-';
