@@ -154,6 +154,8 @@ class MyersDiff {
     typename Diffs::const_iterator begin() const { return result.begin(); }
     typename Diffs::const_iterator end() const { return result.end(); }
 
+    const Diffs& diffs() const { return result; }
+
     //  DIFF FUNCTIONS
 
     /**
